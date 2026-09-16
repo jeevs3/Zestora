@@ -1,0 +1,23 @@
+# Eclipse
+.classpath
+.project
+.settings/
+
+# Build/output
+build/
+bin/
+target/
+
+# Tomcat
+.metadata/
+tmp/
+work/
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local secrets/config
+.env
+*.env

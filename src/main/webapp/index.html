@@ -1,0 +1,1690 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Zestora</title>
+
+    <style>
+
+        /* =========================================
+           BASIC PAGE
+        ========================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Arial, sans-serif;
+            color: #292936;
+            background: white;
+        }
+
+
+        /* =========================================
+           HERO / FOOD IMAGE
+        ========================================= */
+
+        .hero {
+            position: relative;
+
+            width: 100%;
+            height: 100vh;
+            min-height: 600px;
+
+            background-image: url("restopink3.png");
+
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            overflow: hidden;
+        }
+        /* ================================
+   SCROLL DOWN INDICATOR
+================================ */
+
+.scroll-down {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    text-align: center;
+    cursor: pointer;
+
+    color: white;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    z-index: 100;
+}
+
+.scroll-down span {
+    display: block;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+.down-arrow {
+    font-size: 30px;
+    color: white;
+
+    animation: arrowMove 1.5s ease-in-out infinite;
+}
+
+@keyframes arrowMove {
+
+    0%, 100% {
+        transform: translateY(0);
+        opacity: 0.6;
+    }
+
+    50% {
+        transform: translateY(8px);
+        opacity: 1;
+    }
+}
+
+        /* =========================================
+           NAVIGATION
+        ========================================= */
+
+        .navbar {
+            position: absolute;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+
+            height: 64px;
+
+            padding: 0 5%;
+
+            display: flex;
+            align-items: center;
+
+            z-index: 1000;
+        }
+
+
+        /* =========================================
+           Zestora LOGO
+        ========================================= */
+
+        .logo {
+
+            position: absolute;
+
+            top: 50%;
+            left: 50%;
+
+            transform: translate(-50%, -50%);
+
+            font-size: 80px;
+
+            font-weight: 800;
+
+            color: #fff8f6;
+
+            letter-spacing: 2px;
+
+            text-align: center;
+
+            white-space: nowrap;
+
+            animation: ZestoraFloat 3s ease-in-out infinite;
+        }
+
+
+        .logo span {
+            color: #f3c6c0;
+        }
+
+
+        /* LOGO MOVEMENT */
+
+        @keyframes ZestoraFloat {
+
+            0%,
+            100% {
+                transform: translate(-50%, -50%) translateY(0);
+            }
+
+            50% {
+                transform: translate(-50%, -50%) translateY(-8px);
+            }
+
+        }
+
+
+        /* =========================================
+           NAV LINKS
+        ========================================= */
+
+        /*.nav-links {
+
+            display: flex;
+
+            gap: 30px;
+
+            margin-left: 55px;
+        }
+
+        .nav-links a {
+
+            text-decoration: none;
+
+            color: #fff8f6;
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            transition: 0.25s ease;
+        }
+
+        .nav-links a:hover {
+
+            color: #f3c6c0;
+        }
+*/
+
+        /* =========================================
+           RIGHT SIDE
+        ========================================= */
+
+        .nav-actions {
+
+            margin-left: auto;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+        }
+
+
+        /* =========================================
+           LOGIN
+        ========================================= */
+
+        .login-btn {
+
+            padding: 8px 17px;
+
+            border-radius: 8px;
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            color: #fff8f6;
+
+            border: 1px solid rgba(255, 255, 255, 0.65);
+
+            background: transparent;
+        }
+
+        .login-btn:hover {
+
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+
+        /* =========================================
+           SIGN UP
+        ========================================= */
+
+        .signup-btn {
+
+            padding: 8px 17px;
+
+            border-radius: 8px;
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+            color: #5a3828;
+
+            background:#FBF3E3;        /* #f3c6c0;*/
+        }
+
+        .signup-btn:hover {
+
+            background: #f8d8d3;
+        }
+
+
+        /* =========================================
+           WHITE + PINK DECORATIVE SECTION
+        ========================================= */
+
+        .decor-section {
+
+            position: relative;
+
+            width: 100%;
+
+            min-height: 750px;
+
+            background: #ffffff;
+
+            overflow: hidden;
+        }
+
+
+        /* =========================================
+           SOFT PINK CORNER BLOBS
+        ========================================= */
+
+        .pink-blob {
+
+            position: absolute;
+
+            background: #fff0f3;
+
+            opacity: 0.9;
+
+            pointer-events: none;
+        }
+
+
+        /* TOP LEFT */
+
+        .blob-top {
+
+            width: 420px;
+
+            height: 300px;
+
+            top: -150px;
+
+            left: -120px;
+
+            border-radius: 20% 70% 45% 30% / 30% 40% 70% 60%;
+
+            transform: rotate(-18deg);
+        }
+
+
+        /* BOTTOM RIGHT */
+
+        .blob-bottom {
+
+            width: 500px;
+
+            height: 300px;
+
+            right: -170px;
+
+            bottom: -150px;
+
+            border-radius: 60% 30% 20% 70% / 50% 40% 70% 30%;
+
+            background: #ffe7ed;
+
+            transform: rotate(-12deg);
+        }
+
+
+        /* =========================================
+           FLOWING PINK LINES
+        ========================================= */
+
+        .pink-line {
+
+            position: absolute;
+
+            width: 650px;
+
+            height: 260px;
+
+            border: 2px solid rgba(238, 111, 130, 0.55);
+
+            border-radius: 50%;
+
+            pointer-events: none;
+        }
+
+
+        /* TOP LINE */
+
+        .line-top {
+
+            top: -170px;
+
+            left: -70px;
+
+            transform:
+                rotate(-12deg)
+                skewX(-15deg);
+        }
+
+
+        /* BOTTOM LINE */
+
+        .line-bottom {
+
+            right: -100px;
+
+            bottom: -160px;
+
+            transform:
+                rotate(-20deg)
+                skewX(15deg);
+        }
+
+
+        /* =========================================
+           DOT PATTERNS
+        ========================================= */
+
+        .dot-pattern {
+
+            position: absolute;
+
+            width: 55px;
+
+            height: 55px;
+
+            background-image: radial-gradient(
+                circle,
+                #ed91a1 2px,
+                transparent 2.5px
+            );
+
+            background-size: 18px 18px;
+
+            opacity: 0.65;
+
+            pointer-events: none;
+        }
+
+
+        /* LEFT */
+
+        .dots-left {
+
+            top: 90px;
+
+            left: 35px;
+        }
+
+
+        /* RIGHT */
+
+        .dots-right {
+
+            top: 160px;
+
+            right: 45px;
+        }
+
+
+        /* =========================================
+           CIRCLES
+        ========================================= */
+
+        .circle {
+
+            position: absolute;
+
+            width: 20px;
+
+            height: 20px;
+
+            border: 2px solid #ef8fa0;
+
+            border-radius: 50%;
+
+            opacity: 0.8;
+        }
+
+
+        .circle-one {
+
+            top: 130px;
+
+            left: 190px;
+        }
+
+
+        .circle-two {
+
+            bottom: 80px;
+
+            left: 80px;
+        }
+
+
+        /* =========================================
+           X DECORATIONS
+        ========================================= */
+
+        .pink-x {
+
+            position: absolute;
+
+            color: #ed8295;
+
+            font-size: 30px;
+
+            font-weight: 300;
+
+            opacity: 0.8;
+
+            font-family: Arial, sans-serif;
+        }
+
+
+        .x-one {
+
+            top: 230px;
+
+            left: 150px;
+        }
+
+
+        .x-two {
+
+            right: 390px;
+
+            bottom: 70px;
+        }
+
+
+        /* =========================================
+           RESPONSIVE
+        ========================================= */
+
+        @media (max-width: 700px) {
+
+            .decor-section {
+
+                min-height: 650px;
+            }
+
+            .blob-top {
+
+                width: 300px;
+
+                height: 220px;
+            }
+
+            .blob-bottom {
+
+                width: 350px;
+
+                height: 230px;
+            }
+
+            .pink-line {
+
+                width: 450px;
+
+                height: 200px;
+            }
+
+            .dots-right {
+
+                right: 20px;
+            }
+
+            .x-two {
+
+                right: 100px;
+            }
+
+            .logo {
+
+                font-size: 48px;
+            }
+
+            .nav-links {
+
+                display: none;
+            }
+
+        }
+        
+        /* =========================================
+   FLOATING FOOD DECORATIONS
+========================================= */
+
+.food-decorations {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.food-item {
+    position: absolute;
+    display: block;
+    object-fit: contain;
+
+    /* Initial hidden position */
+    opacity: 0;
+
+    transition:
+        transform 1.2s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 0.8s ease;
+}
+
+
+/* =========================================
+   PIZZA
+   Left side
+========================================= */
+
+.pizza-item {
+
+    width: 290px;
+
+    left: 3%;
+    top: 25%;
+
+    transform:
+        translateX(-180px)
+        rotate(-8deg);
+}
+
+
+/* =========================================
+   KIMBAP
+   Upper-right
+========================================= */
+
+.kimbap-item {
+
+    width: 150px;
+
+    right: 18%;
+    top: 22%;
+
+    transform:
+        translateX(150px)
+        rotate(8deg);
+}
+
+
+/* =========================================
+   WAFFLE
+   Bottom-right
+========================================= */
+
+.waffle-item {
+
+    width: 300px;
+
+    right: 7%;
+    bottom: 8%;
+
+    transform:
+        translateX(180px)
+        rotate(6deg);
+}
+
+
+/* =========================================
+   TOMATO
+   Lower-left / middle
+========================================= */
+
+.tomato-item {
+
+    width: 65px;
+
+    left: 25%;
+    bottom: 22%;
+
+    transform:
+        translateY(100px)
+        rotate(-15deg);
+}
+
+
+/* =========================================
+   ONION
+   Right side
+========================================= */
+
+.onion-item {
+
+    width: 75px;
+
+    right: 5%;
+    top: 52%;
+
+    transform:
+        translateX(100px)
+        rotate(15deg);
+}
+
+
+/* =========================================
+   MINT LEAF
+   CENTER
+========================================= */
+
+.mint-item {
+
+    width: 95px;
+
+    left: 47%;
+    top: 20%;
+
+    transform:
+        translateY(-80px)
+        rotate(-15deg);
+}
+
+
+/* =========================================
+   WHEN SECTION BECOMES VISIBLE
+========================================= */
+
+.decor-section.show-food .pizza-item {
+
+    opacity: 1;
+
+    transform:
+        translateX(0)
+        rotate(-8deg);
+
+    animation: pizzaFloat 4s ease-in-out 1.2s infinite;
+}
+
+
+.decor-section.show-food .kimbap-item {
+
+    opacity: 1;
+
+    transform:
+        translateX(0)
+        rotate(8deg);
+
+    animation: kimbapFloat 4.5s ease-in-out 1.4s infinite;
+}
+
+
+.decor-section.show-food .waffle-item {
+
+    opacity: 1;
+
+    transform:
+        translateX(0)
+        rotate(6deg);
+
+    animation: waffleFloat 5s ease-in-out 1.6s infinite;
+}
+
+
+.decor-section.show-food .tomato-item {
+
+    opacity: 1;
+
+    transform:
+        translateY(0)
+        rotate(-15deg);
+
+    animation: smallFloat 3.5s ease-in-out 1.8s infinite;
+}
+
+
+.decor-section.show-food .onion-item {
+
+    opacity: 1;
+
+    transform:
+        translateX(0)
+        rotate(15deg);
+
+    animation: smallFloat 4s ease-in-out 2s infinite;
+}
+
+
+.decor-section.show-food .mint-item {
+
+    opacity: 1;
+
+    transform:
+        translateY(0)
+        rotate(-15deg);
+
+    animation: mintFloat 4s ease-in-out 2.2s infinite;
+}
+
+
+/* =========================================
+   FLOATING ANIMATIONS
+========================================= */
+
+@keyframes pizzaFloat {
+
+    0%, 100% {
+        transform:
+            translateY(0)
+            rotate(-8deg);
+    }
+
+    50% {
+        transform:
+            translateY(-10px)
+            rotate(-5deg);
+    }
+}
+
+
+@keyframes kimbapFloat {
+
+    0%, 100% {
+        transform:
+            translateY(0)
+            rotate(8deg);
+    }
+
+    50% {
+        transform:
+            translateY(-12px)
+            rotate(5deg);
+    }
+}
+
+
+@keyframes waffleFloat {
+
+    0%, 100% {
+        transform:
+            translateY(0)
+            rotate(6deg);
+    }
+
+    50% {
+        transform:
+            translateY(-10px)
+            rotate(3deg);
+    }
+}
+
+
+@keyframes smallFloat {
+
+    0%, 100% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+
+    50% {
+        transform:
+            translateY(-12px)
+            rotate(5deg);
+    }
+}
+
+
+@keyframes mintFloat {
+
+    0%, 100% {
+        transform:
+            translateY(0)
+            rotate(-15deg);
+    }
+
+    50% {
+        transform:
+            translateY(-15px)
+            rotate(-5deg);
+    }
+}
+
+.decor-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 500px;
+    z-index: 10;
+}
+
+.decor-content h2 {
+    font-size: 52px;
+    line-height: 1.1;
+    color: #5a3828;
+    margin-bottom: 18px;
+    font-weight: 800;
+}
+
+.decor-content p {
+    font-size: 17px;
+    line-height: 1.6;
+    color: #80645a;
+    margin-bottom: 28px;
+}
+
+.decor-content a {
+    display: inline-block;
+    padding: 13px 28px;
+    background: #f3a0b5;
+    color: white;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+/* =========================================
+   PAGE 3 - CUISINE DISCOVERY BACKGROUND
+========================================= */
+
+/* =========================================
+   Zestora CUISINE PAGE
+========================================= */
+
+.cuisine-page {
+    position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+
+    box-sizing: border-box;
+
+    background: #fff7f7;
+
+    overflow: hidden;
+
+    /* CENTER EVERYTHING VERTICALLY */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 60px 0;
+}
+.cuisine-scroll {
+    width: 100%;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scroll-behavior: smooth;
+
+    /* Hide scrollbar - Chrome, Edge, Safari */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    /* Allow touch/swipe scrolling */
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-x;
+}
+
+/* Hide scrollbar completely */
+.cuisine-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+
+
+/* ONE HORIZONTAL ROW */
+
+.cuisine-track {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 18px;
+
+    width: max-content;
+
+    padding-left: 7vw;
+    padding-right: 7vw;
+}
+
+/* =========================================
+   CARD
+========================================= */
+
+.cuisine-card {
+    position: relative;
+
+    flex: 0 0 285px;
+
+    width: 285px;
+    height: 300px;
+
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 8px 25px rgba(80, 45, 35, 0.15);
+
+    cursor: pointer;
+
+    isolation: isolate;
+
+    transition: transform 0.3s ease;
+}
+
+
+/* HOVER */
+
+.cuisine-card:hover {
+    transform: translateY(-8px);
+}
+
+
+/* =========================================
+   IMAGE = ENTIRE CARD
+========================================= */
+
+.cuisine-card img {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    z-index: -2;
+
+    transition: transform 0.5s ease;
+}
+
+
+/* IMAGE ZOOM */
+
+.cuisine-card:hover img {
+    transform: scale(1.06);
+}
+
+
+/* =========================================
+   DARK GRADIENT FOR TEXT
+========================================= */
+
+.cuisine-card::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 45%;
+
+    background: linear-gradient(
+        to top,
+        rgba(30, 18, 12, 0.78),
+        rgba(30, 18, 12, 0)
+    );
+
+    z-index: -1;
+}
+
+
+/* =========================================
+   TEXT ON IMAGE
+========================================= */
+
+.cuisine-card h3 {
+    position: absolute;
+
+    left: 20px;
+    bottom: 18px;
+
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 23px;
+
+    font-weight: 800;
+
+    line-height: 1.2;
+
+    text-shadow:
+        0 2px 6px rgba(0, 0, 0, 0.5);
+
+    z-index: 2;
+}
+.cuisine-heading {
+    width: 100%;
+
+    text-align: center;
+
+    margin-bottom: 45px;
+
+    flex-shrink: 0;
+}
+
+.cuisine-heading span {
+    display: block;
+
+    color: #ed8295;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 12px;
+}
+
+.cuisine-heading h2 {
+    margin: 0;
+
+    color: #5a3828;
+
+    font-size: 46px;
+
+    font-weight: 800;
+}
+
+.cuisine-heading p {
+    margin: 14px 0 0;
+
+    color: #80645a;
+
+    font-size: 17px;
+}
+
+/* =========================================
+   Zestora FOOTER
+========================================= */
+
+.Zestora-footer {
+    width: 100%;
+    background: #211613;
+    color: white;
+    padding: 70px 0 30px;
+}
+
+
+.footer-container {
+    width: 80%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+/* LOGO */
+
+.footer-logo {
+    font-size: 46px;
+    font-weight: 800;
+    letter-spacing: 1px;
+
+    margin-bottom: 45px;
+
+    color: #fff8f6;
+}
+
+.footer-logo span {
+    color: #f3a0b5;
+}
+
+
+/* COLUMNS */
+
+.footer-columns {
+    display: grid;
+
+    grid-template-columns:
+        1.1fr
+        1.2fr
+        1.2fr
+        1.2fr
+        1.3fr;
+
+    gap: 45px;
+}
+
+
+/* COLUMN */
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.footer-column h3 {
+    margin: 0 0 20px;
+
+    color: #ffffff;
+
+    font-size: 17px;
+    font-weight: 700;
+}
+
+
+.footer-column a {
+    text-decoration: none;
+
+    color: #a99b97;
+
+    font-size: 15px;
+
+    margin-bottom: 13px;
+
+    transition: 0.25s ease;
+}
+
+
+.footer-column a:hover {
+    color: #f3a0b5;
+
+    transform: translateX(3px);
+}
+
+
+/* WEBSITE DESCRIPTION */
+
+.footer-description {
+    color: #a99b97;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    margin: 0 0 18px;
+
+    max-width: 220px;
+}
+
+
+/* WEBSITE LINK */
+
+.website-link {
+    color: #f3a0b5 !important;
+
+    font-weight: 700;
+
+    margin-top: 5px;
+}
+
+
+/* DIVIDER */
+
+.footer-divider {
+    width: 100%;
+
+    height: 1px;
+
+    background: #514642;
+
+    margin: 55px 0 18px;
+}
+
+
+/* BOTTOM */
+
+.footer-bottom {
+    color: #817570;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+
+.footer-bottom p {
+    margin: 3px 0;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+
+    .footer-columns {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 35px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .footer-container {
+        width: 88%;
+    }
+
+    .footer-logo {
+        font-size: 38px;
+    }
+
+    .footer-columns {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+
+}
+.home-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 17px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    color: #5a3828;
+    background: #FBF3E3;
+    transition: 0.2s ease;
+}
+
+.home-btn:hover {
+    background: #f8d8d3;
+}
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         HERO
+    ========================================= -->
+
+    <section class="hero">
+
+
+        <!-- NAVIGATION -->
+
+        <header class="navbar">
+<nav class="nav-links">
+    <a href="restaurant" class="home-btn">Home</a>
+</nav>
+
+            <div class="nav-actions">
+
+                <a href="login" class="login-btn">
+                    Login
+                </a>
+
+                <a href="signup" class="signup-btn">
+                    Sign Up
+                </a>
+
+            </div>
+
+        </header>
+
+
+        <!-- Zestora -->
+
+        <div class="logo">
+
+            Zest<span>ora</span>
+
+        </div>
+<div class="scroll-down" onclick="scrollToNextSection()">
+    <p>Scroll down</p>
+    <div class="down-arrow">↓</div>
+</div>
+
+
+    </section>
+
+
+
+    <!-- =========================================
+         SECOND WHITE + PINK SECTION
+    ========================================= -->
+
+    <section class="decor-section" id="decor">
+
+
+        <!-- PINK DECORATIONS -->
+
+        <div class="pink-blob blob-top"></div>
+
+        <div class="pink-blob blob-bottom"></div>
+
+
+        <div class="pink-line line-top"></div>
+
+        <div class="pink-line line-bottom"></div>
+
+
+         <div class="dot-pattern dots-left"></div>
+
+        <div class="dot-pattern dots-right"></div>
+
+
+        <div class="circle circle-one"></div>
+
+        <div class="circle circle-two"></div>
+
+
+       <!--  <div class="pink-x x-one">
+            ×
+        </div>
+
+        <div class="pink-x x-two">
+            ×
+        </div>-->
+        
+        <!-- FOOD DECORATIONS -->
+
+<div class="food-decorations">
+
+    <!-- Pizza - left -->
+    <img src="pizza.png"
+         class="food-item pizza-item"
+         alt="Pizza">
+
+    <!-- Kimbap - upper right -->
+    <img src="kimbap.png"
+         class="food-item kimbap-item"
+         alt="Kimbap">
+
+    <!-- Waffle - bottom right -->
+    <img src="waffle.png"
+         class="food-item waffle-item"
+         alt="Waffle">
+
+    <!-- Small tomato -->
+    <img src="tomato2.png"
+         class="food-item tomato-item"
+         alt="Tomato">
+
+    <!-- Single onion -->
+    <img src="onion.png"
+         class="food-item onion-item"
+         alt="Onion">
+
+    <!-- Single mint leaf -->
+    <img src="mint.png"
+         class="food-item mint-item"
+         alt="Mint leaf">
+
+</div>
+
+<div class="decor-content">
+
+    <h2>Find Your Next Craving</h2>
+
+    <p>
+        Discover food that matches your mood,
+        moment & craving.
+    </p>
+
+</div>
+
+    </section>
+    
+    <!-- =========================================
+     PAGE 3 - CUISINE DISCOVERY
+========================================= -->
+
+
+
+<section class="cuisine-page">
+
+    <div class="cuisine-heading">
+        <span>EXPLORE</span>
+        <h2>What's in our Zestora?</h2>
+        <p>Explore flavours from around the world.</p>
+    </div>
+
+    <div class="cuisine-scroll">
+
+        <div class="cuisine-track">
+
+    <div class="cuisine-card">
+    <img src="beverages.png" alt="Beverages">
+        <h3>Beverages</h3>
+  
+
+</div>
+
+    <div class="cuisine-card">
+        <img src="cafe.png" alt="Café & Coffee">
+        <h3>Café & Coffee</h3>
+    </div>
+
+    <div class="cuisine-card">
+        <img src="chinese.png" alt="Chinese">
+        <h3>Chinese</h3>
+    </div>
+
+    <div class="cuisine-card">
+        <img src="continental.png" alt="Continental">
+        <h3>Continental</h3>
+    </div>
+
+    <div class="cuisine-card">
+        <img src="desserts.png" alt="Desserts">
+        <h3>Desserts</h3>
+    </div>
+
+    <div class="cuisine-card">
+        <img src="healthy.png" alt="Healthy">
+        <h3>Healthy</h3>
+    </div>
+
+    <div class="cuisine-card">
+        <img src="italian.png" alt="Italian">
+        <h3>Italian</h3>
+    </div>
+
+    <div class="cuisine-card">
+        <img src="japanese.png" alt="Japanese">
+        <h3>Japanese</h3>
+    </div>
+
+    <div class="cuisine-card">
+        <img src="korean.png" alt="Korean">
+        <h3>Korean</h3>
+    </div>
+
+    <div class="cuisine-card">
+        <img src="mexican.png" alt="Mexican">
+        <h3>Mexican</h3>
+    </div>
+
+    <div class="cuisine-card">
+        <img src="north-indian.png" alt="North Indian">
+        <h3>North Indian</h3>
+    </div>
+
+    <div class="cuisine-card">
+        <img src="south-indian.png" alt="South Indian">
+        <h3>South Indian</h3>
+    </div>
+
+    <div class="cuisine-card">
+        <img src="soups.png" alt="Soups">
+        <h3>Soups</h3>
+    </div>
+
+    <div class="cuisine-card">
+        <img src="thai.png" alt="Thai">
+        <h3>Thai</h3>
+    </div>
+
+</div>
+
+</section>
+<!-- =========================================
+     Zestora FOOTER
+========================================= -->
+
+<footer class="Zestora-footer">
+
+    <div class="footer-container">
+
+        <!-- LOGO -->
+        <div class="footer-logo">
+            Zest<span>ora</span>
+        </div>
+
+
+        <div class="footer-columns">
+
+            <!-- ABOUT -->
+            <div class="footer-column">
+                <h3>About Zestora</h3>
+
+                <a href="#">About Us</a>
+                <a href="#">Our Story</a>
+                <a href="#">Careers</a>
+                <a href="#">Contact Us</a>
+            </div>
+
+
+            <!-- FOR RESTAURANTS -->
+            <div class="footer-column">
+                <h3>For Restaurants</h3>
+
+                <a href="#">Partner With Us</a>
+                <a href="#">Restaurant Login</a>
+                <a href="#">Business Support</a>
+            </div>
+
+
+            <!-- EXPLORE -->
+            <div class="footer-column">
+                <h3>Explore</h3>
+
+                <a href="#">Cuisines</a>
+                <a href="#">Restaurants</a>
+                <a href="#">Popular Foods</a>
+                <a href="#">Offers</a>
+            </div>
+
+
+            <!-- INFORMATION -->
+            <div class="footer-column">
+                <h3>Information</h3>
+
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Help & Support</a>
+                <a href="#">Feedback</a>
+            </div>
+
+
+            <!-- WEBSITE -->
+            <div class="footer-column">
+                <h3>Zestora</h3>
+
+                <p class="footer-description">
+                    Discover delicious food,
+                    explore restaurants and
+                    satisfy your next craving.
+                </p>
+
+                <a href="#" class="website-link">
+                    www.zestora.com
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- DIVIDER -->
+        <div class="footer-divider"></div>
+
+
+        <!-- BOTTOM -->
+        <div class="footer-bottom">
+
+            <p>
+                By continuing on Zestora, you agree to our
+                Terms of Service, Privacy Policy and Content Policies.
+            </p>
+
+            <p>
+                © 2026 Zestora. All rights reserved.
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+    
+
+
+</body>
+<script>
+
+const decorSection = document.querySelector(".decor-section");
+
+const foodObserver = new IntersectionObserver(
+    (entries) => {
+
+        entries.forEach((entry) => {
+
+            if (entry.isIntersecting) {
+
+                decorSection.classList.add("show-food");
+
+            } else {
+
+                decorSection.classList.remove("show-food");
+
+            }
+
+        });
+
+    },
+    {
+        threshold: 0.15
+    }
+);
+
+foodObserver.observe(decorSection);
+
+function scrollToNextSection() {
+    document.getElementById("decor").scrollIntoView({
+        behavior: "smooth"
+    });
+}
+
+</script>
+
+
+</html>
