@@ -1880,118 +1880,114 @@ document
 
 function applyFilters() {
 
-    const foodRadio =
-        document.querySelector(
-            'input[name="foodFilter"]:checked'
-        );
+    const foodRadio = document.querySelector(
+        'input[name="foodFilter"]:checked'
+    );
 
-    const priceRadio =
-        document.querySelector(
-            'input[name="priceFilter"]:checked'
-        );
+    const priceRadio = document.querySelector(
+        'input[name="priceFilter"]:checked'
+    );
 
-    const food =
-        foodRadio
-            ? foodRadio.value
-            : "all";
+    const food = foodRadio ? foodRadio.value : "all";
+    const price = priceRadio ? priceRadio.value : "all";
 
-    const price =
-        priceRadio
-            ? priceRadio.value
-            : "all";
+    const sections = document.querySelectorAll(".menu-section");
 
+    let totalVisibleItems = 0;
 
-    const items =
-        Array.from(
-            document.querySelectorAll(
-                ".menu-item"
-            )
-        );
+    sections.forEach(function(section) {
 
+        const items = section.querySelectorAll(".menu-item");
+        let visibleItems = 0;
 
-    items.forEach(
-        function(item) {
+        items.forEach(function(item) {
 
-            const itemVeg =
-                item.dataset.veg === "true";
+            const itemVeg = item.dataset.veg === "true";
 
-            const itemPrice =
-                parseFloat(
-                    item.dataset.price
-                );
+            const itemPrice = parseFloat(
+                item.dataset.price
+            );
 
             let show = true;
 
-
-            /* FOOD */
-
-            if (
-                food === "veg" &&
-                !itemVeg
-            ) {
-
+            // FOOD FILTER
+            if (food === "veg" && !itemVeg) {
                 show = false;
             }
 
-
-            if (
-                food === "nonveg" &&
-                itemVeg
-            ) {
-
+            if (food === "nonveg" && itemVeg) {
                 show = false;
             }
 
-
-            /* PRICE */
-
+            // PRICE FILTER
             if (price === "0-100") {
 
-                if (itemPrice > 100) {
+                if (itemPrice < 0 || itemPrice > 100) {
                     show = false;
                 }
 
-            } else if (
-                price === "100-200"
-            ) {
+            } else if (price === "100-200") {
 
-                if (
-                    itemPrice < 100 ||
-                    itemPrice > 200
-                ) {
-
+                if (itemPrice < 100 || itemPrice > 200) {
                     show = false;
                 }
 
-            } else if (
-                price === "200-300"
-            ) {
+            } else if (price === "200-300") {
 
-                if (
-                    itemPrice < 200 ||
-                    itemPrice > 300
-                ) {
-
+                if (itemPrice < 200 || itemPrice > 300) {
                     show = false;
                 }
 
-            } else if (
-                price === "300plus"
-            ) {
+            } else if (price === "300plus") {
 
                 if (itemPrice < 300) {
                     show = false;
                 }
             }
 
+            // SHOW / HIDE ITEM
+            item.style.display = show ? "" : "none";
 
-            item.style.display =
-                show ? "" : "none";
+            if (show) {
+                visibleItems++;
+                totalVisibleItems++;
+            }
+        });
 
+        // HIDE ENTIRE CATEGORY IF NO ITEMS MATCH
+        if (visibleItems === 0) {
+            section.style.display = "none";
+        } else {
+            section.style.display = "";
         }
-    );
-}
+    });
 
+    // REMOVE OLD "NO ITEMS" MESSAGE
+    const oldMessage = document.getElementById("filterEmptyMessage");
+
+    if (oldMessage) {
+        oldMessage.remove();
+    }
+
+    // SHOW MESSAGE IF NOTHING MATCHES
+    if (totalVisibleItems === 0) {
+
+        const message = document.createElement("div");
+
+        message.id = "filterEmptyMessage";
+        message.className = "empty";
+
+        message.innerHTML = `
+            <h2>No items found</h2>
+            <p>
+                No dishes are available for the selected filters.
+                Try another price range or food type.
+            </p>
+        `;
+
+        document.querySelector(".main").prepend(message);
+    }
+}
 
 /* =========================================================
    CATEGORY NAVIGATION

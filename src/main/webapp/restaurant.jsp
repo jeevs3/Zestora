@@ -979,10 +979,16 @@
     placeholder="Search for restaurants or dishes..."
     oninput="searchRestaurants()">
       </div>
-      <div class="header-actions">
+   <div class="header-actions">
+
+    <% if (loggedInUserId == null) { %>
+
         <a class="auth-btn login-btn" href="login.jsp">Login</a>
         <a class="auth-btn signup-btn" href="signup.jsp">Sign Up</a>
-        <div class="toggle-group">
+
+    <% } %>
+
+    <div class="toggle-group">
           <button id="vegButton" class="veg" onclick="filterFoodType('Veg')">🌱 <span class="label">Veg</span></button>
           <button id="nonVegButton" class="nonveg" onclick="filterFoodType('Non-Veg')">🍗 <span class="label">Non-Veg</span></button>
         </div>
