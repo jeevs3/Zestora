@@ -15,20 +15,20 @@ import com.Food.Utility.DBConnection;
 
 public class MenuDAOImpl implements MenuDAO {
 	
-	public static String INSERT_QUERY = "INSERT INTO Menu(RestaurantId, itemName, description, price, isAvailable, category, createdAt, updatedAt, deletedAt, photo, isVeg)" 
+	public static String INSERT_QUERY = "INSERT INTO menu(RestaurantId, itemName, description, price, isAvailable, category, createdAt, updatedAt, deletedAt, photo, isVeg)" 
 			+ "Values(?,?,?,?,?,?,?,?,?,?,?)";
-	public static String SELECT_QUERY = "SELECT * FROM Menu WHERE menuId = ?";
+	public static String SELECT_QUERY = "SELECT * FROM menu WHERE menuId = ?";
 	
 	public static String UPDATE_QUERY =
-	        "UPDATE Menu SET RestaurantId = ?, itemName = ?, description = ?, price = ?, " +
+	        "UPDATE menu SET RestaurantId = ?, itemName = ?, description = ?, price = ?, " +
 	        "isAvailable = ?, category = ?, createdAt = ?, updatedAt = ?, deletedAt = ?, " +
 	        "photo = ?, isVeg = ? WHERE menuId = ?";
 	
-	public static String DELETE_QUERY = "DELETE  FROM Menu WHERE menuId = ?";
+	public static String DELETE_QUERY = "DELETE  FROM menu WHERE menuId = ?";
 	
-	public static String SELECT_ALL_QUERY = "SELECT * FROM Menu";
+	public static String SELECT_ALL_QUERY = "SELECT * FROM menu";
 	
-	public static String SELECT_BY_RESTAURANT_QUERY = "SELECT * FROM Menu WHERE RestaurantId = ?";
+	public static String SELECT_BY_RESTAURANT_QUERY = "SELECT * FROM menu WHERE RestaurantId = ?";
 	@Override
 	public void addMenu(Menu menu) {
 		
@@ -233,7 +233,7 @@ public class MenuDAOImpl implements MenuDAO {
 	    Menu menu = null;
 
 	    String query =
-	            "SELECT * FROM Menu WHERE menuId = ?";
+	            "SELECT * FROM menu WHERE menuId = ?";
 
 	    Connection connection =
 	            DBConnection.getConnection();

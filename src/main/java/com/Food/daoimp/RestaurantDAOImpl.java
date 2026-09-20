@@ -13,17 +13,20 @@ import com.Food.Utility.DBConnection;
 
 public class RestaurantDAOImpl implements RestaurantDAO{
 	
-	public static String INSERT_QUERY = "INSERT INTO Restaurant(Name, CuisineType, DeliveryTime, Address, AdminUserId, Rating, isActive, Photo, offer, veg, location)" 
-			+ "Values(?,?,?,?,?,?,?,?,?,?,?)";
-	public static String SELECT_QUERY = "SELECT * FROM Restaurant WHERE RestaurantID = ?";
+	public static String INSERT_QUERY =
+	        "INSERT INTO restaurant(Name, CuisineType, DeliveryTime, Address, AdminUserId, Rating, isActive, Photo, offer, veg, location) "
+	        + "VALUES(?,?,?,?,?,?,?,?,?,?,?)";
+	
+	public static String SELECT_QUERY = "SELECT * FROM restaurant WHERE RestaurantID = ?";
 	
 	public static String UPDATE_QUERY =
-	        "UPDATE Restaurant SET Name = ?, CuisineType = ?, DeliveryTime = ?, Address = ?, AdminUserId = ?, "
+	        "UPDATE restaurant SET Name = ?, CuisineType = ?, DeliveryTime = ?, Address = ?, AdminUserId = ?, "
 	        + "Rating = ?, isActive = ?, Photo = ?, offer = ?, veg = ?, location = ? "
 	        + "WHERE RestaurantId = ?";
+	
 	public static String DELETE_QUERY = "DELETE  FROM restaurant WHERE RestaurantId = ?";
 	
-	public static String SELECT_ALL_QUERY = "SELECT * FROM Restaurant";
+	public static String SELECT_ALL_QUERY = "SELECT * FROM restaurant";
 	
 
 	@Override

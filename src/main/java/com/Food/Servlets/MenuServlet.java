@@ -61,6 +61,20 @@ public class MenuServlet extends HttpServlet {
 
         List<Menu> menuList =
                 menuDAO.getMenuByRestaurant(restaurantId);
+        
+        System.out.println("=================================");
+        System.out.println("Restaurant ID: " + restaurantId);
+        System.out.println("Menu List Size: " + menuList.size());
+
+        for (Menu menu : menuList) {
+            System.out.println(
+                "Menu ID: " + menu.getMenuId()
+                + " | Name: " + menu.getItemName()
+                + " | Restaurant ID: " + menu.getRestaurantId()
+            );
+        }
+
+        System.out.println("=================================");
 
         // ==========================================
         // CART ITEMS
