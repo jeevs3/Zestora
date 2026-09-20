@@ -261,7 +261,7 @@ public class PlaceOrderServlet extends HttpServlet {
         // =====================================================
 
         String orderQuery =
-                "INSERT INTO Orders "
+                "INSERT INTO orders "
                 + "(userId, restaurantId, customerName, phone, "
                 + "deliveryAddress, pincode, instruction, "
                 + "itemTotal, deliveryFee, discount, totalAmount, "
@@ -400,7 +400,7 @@ public class PlaceOrderServlet extends HttpServlet {
             // =================================================
 
             String itemQuery =
-                    "INSERT INTO OrderItem "
+                    "INSERT INTO orderitem "
                     + "(orderId, menuId, quantity, price) "
                     + "VALUES (?, ?, ?, ?)";
 
