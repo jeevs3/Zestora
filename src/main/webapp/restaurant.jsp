@@ -944,6 +944,312 @@
 .restaurant-card[style*="display: none"] {
     display: none !important;
 }
+/* =====================================================
+   ZESTORA RESTAURANT PAGE - MOBILE RESPONSIVE
+   ===================================================== */
+
+@media (max-width: 640px) {
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    /* ---------- HEADER ---------- */
+
+    .header-inner {
+        width: 100%;
+        padding: 10px 12px;
+        gap: 8px;
+        flex-wrap: nowrap;
+    }
+
+    .logo {
+        font-size: 21px;
+        flex-shrink: 0;
+    }
+
+ .search-shell {
+    display: flex;
+    width: 100%;
+    max-width: 220px;
+}
+
+    .locate {
+        display: none;
+    }
+
+    .header-actions {
+        margin-left: auto;
+        gap: 5px;
+        flex-shrink: 0;
+    }
+
+    .auth-btn {
+        padding: 7px 9px;
+        font-size: 11px;
+    }
+
+    .toggle-group {
+        display: none;
+    }
+
+    .icon-btn {
+        width: 34px;
+        height: 34px;
+        font-size: 15px;
+    }
+
+    /* ---------- HERO ---------- */
+
+    .hero {
+        padding: 38px 0 55px;
+    }
+
+    .wrap {
+        width: 100%;
+        max-width: 100%;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .hero-grid {
+        display: block;
+    }
+
+    .eyebrow {
+        font-size: 9px;
+        margin-bottom: 12px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+        line-height: 1.08;
+    }
+
+    .hero p.lede {
+        font-size: 14px;
+        line-height: 1.5;
+        margin: 16px 0 22px;
+    }
+
+    .hero-stats {
+        gap: 16px;
+        flex-wrap: wrap;
+    }
+
+    .hero-stats div strong {
+        font-size: 21px;
+    }
+
+    .hero-stats div span {
+        font-size: 10px;
+    }
+
+    .ticket-stack {
+        display: none;
+    }
+
+    /* ---------- CRAVING SECTION ---------- */
+
+    .craving-section {
+        width: 100%;
+        padding: 30px 0 10px !important;
+        margin: 0;
+    }
+
+    .craving-heading {
+        margin-bottom: 20px;
+        padding: 0 16px;
+    }
+
+    .craving-kicker {
+        font-size: 9px;
+        letter-spacing: 3px;
+        margin-left: 0;
+    }
+
+    .craving-heading h2 {
+        font-size: 25px;
+        margin-left: 0;
+        line-height: 1.2;
+    }
+
+    .category-container {
+        width: 100%;
+        margin-left: 0;
+        padding: 4px 16px 12px;
+        gap: 14px;
+        justify-content: flex-start;
+        overflow-x: auto;
+    }
+
+    .category-item {
+        width: 75px;
+        flex: 0 0 75px;
+    }
+
+    .category-icon {
+        width: 64px;
+        height: 64px;
+        font-size: 30px;
+        margin-bottom: 8px;
+    }
+
+    .category-item span {
+        font-size: 11px;
+    }
+
+    /* ---------- FILTERS ---------- */
+
+    .filters {
+        width: 100%;
+        overflow-x: auto;
+        gap: 8px;
+        margin: 12px 0 24px !important;
+        padding: 0 16px;
+        scrollbar-width: none;
+    }
+
+    .filters::-webkit-scrollbar {
+        display: none;
+    }
+
+    .filters button {
+        height: 34px;
+        padding: 0 13px;
+        font-size: 12px;
+        flex-shrink: 0;
+    }
+
+    /* ---------- SECTION HEADINGS ---------- */
+
+    .section-head {
+        align-items: flex-start;
+        margin-bottom: 18px;
+        gap: 8px;
+    }
+
+    .section-head h2 {
+        font-size: 24px;
+        line-height: 1.2;
+    }
+
+    .section-head .kicker {
+        font-size: 10px;
+    }
+
+    .view-all {
+        font-size: 11px;
+        white-space: nowrap;
+    }
+
+    /* ---------- RESTAURANT CARDS ---------- */
+
+    .rail {
+        gap: 14px;
+        overflow-x: auto;
+        padding-bottom: 8px;
+        scrollbar-width: none;
+    }
+
+    .rail::-webkit-scrollbar {
+        display: none;
+    }
+
+    .rail .restaurant-card {
+        flex: 0 0 220px;
+        min-width: 220px;
+        width: 220px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .grid .restaurant-card {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .card-photo {
+        height: 125px;
+    }
+
+    .card-body {
+        padding: 12px 13px 14px;
+    }
+
+    .card-body h3 {
+        font-size: 15px;
+    }
+
+    .card-location {
+        font-size: 11px;
+    }
+
+    .card-cuisine {
+        font-size: 11px;
+    }
+
+    .card-meta {
+        font-size: 11px;
+    }
+
+    /* ---------- PROMO ---------- */
+
+    .promo {
+        margin-left: 16px;
+        margin-right: 16px;
+        padding: 28px 20px;
+        border-radius: 18px;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .promo h2 {
+        font-size: 25px;
+    }
+
+    /* ---------- FOOTER ---------- */
+
+    footer {
+        padding: 40px 16px 90px;
+    }
+
+    .foot-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .foot-bottom {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    /* ---------- CHATBOT ---------- */
+
+    .chatbot-button {
+        width: 50px;
+        height: 50px;
+        right: 16px;
+        bottom: 82px;
+        font-size: 21px;
+    }
+
+    .chatbot-box {
+        left: 10px;
+        right: 10px;
+        bottom: 80px;
+        width: auto;
+        height: 440px;
+        border-radius: 16px;
+    }
+
+}
 </style>
 </head>
 <body>
