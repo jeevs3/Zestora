@@ -12,16 +12,16 @@ import com.Food.Utility.DBConnection;
 public class CartDAOImpl implements CartDAO {
 
     private static final String INSERT_QUERY =
-            "INSERT INTO Cart (userId, restaurantId, totalAmount) VALUES (?, ?, ?)";
+            "INSERT INTO cart (userId, restaurantId, totalAmount) VALUES (?, ?, ?)";
 
     private static final String SELECT_BY_USER_QUERY =
-            "SELECT * FROM Cart WHERE userId = ?";
+            "SELECT * FROM cart WHERE userId = ?";
 
     private static final String UPDATE_TOTAL_QUERY =
-            "UPDATE Cart SET totalAmount = ? WHERE cartId = ?";
+            "UPDATE cart SET totalAmount = ? WHERE cartId = ?";
 
     private static final String DELETE_QUERY =
-            "DELETE FROM Cart WHERE cartId = ?";
+            "DELETE FROM cart WHERE cartId = ?";
 
 
     @Override
@@ -140,7 +140,7 @@ public class CartDAOImpl implements CartDAO {
     public void updateRestaurantId(int cartId, int restaurantId) {
 
         String query =
-                "UPDATE Cart SET restaurantId = ? WHERE cartId = ?";
+                "UPDATE cart SET restaurantId = ? WHERE cartId = ?";
 
         Connection connection =
                 DBConnection.getConnection();
