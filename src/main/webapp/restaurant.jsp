@@ -112,6 +112,7 @@
     padding:16px 24px;
     flex-wrap:wrap;
   }
+  
 .logo {
     font-size: 26px;
     font-weight: 700;
@@ -960,12 +961,26 @@
     /* ---------- HEADER ---------- */
 
     .header-inner {
-        width: 100%;
-        padding: 10px 12px;
-        gap: 8px;
-        flex-wrap: nowrap;
-    }
+    width: 100%;
+    padding: 10px 12px;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+.logo {
+    order: 1;
+}
 
+.header-actions {
+    order: 2;
+    margin-left: auto;
+}
+
+.search-shell {
+    order: 3;
+    width: 100%;
+    max-width: none;
+    flex: 0 0 100%;
+}
     .logo {
         font-size: 21px;
         flex-shrink: 0;
@@ -993,9 +1008,14 @@
     }
 
     .toggle-group {
-        display: none;
-    }
+    display: flex;
+    flex-shrink: 0;
+}
 
+.toggle-group button {
+    padding: 7px 9px;
+    font-size: 12px;
+}
     .icon-btn {
         width: 34px;
         height: 34px;
