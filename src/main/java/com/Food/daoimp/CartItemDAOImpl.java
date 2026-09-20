@@ -14,19 +14,19 @@ import com.Food.Utility.DBConnection;
 public class CartItemDAOImpl implements CartItemDAO {
 
     private static final String INSERT_QUERY =
-            "INSERT INTO cartitem (cartId, menuId, quantity, price) VALUES (?, ?, ?, ?)";
+            "INSERT INTO CartItem (cartId, menuId, quantity, price) VALUES (?, ?, ?, ?)";
 
     private static final String SELECT_QUERY =
-            "SELECT * FROM cartitem WHERE cartId = ?";
+            "SELECT * FROM CartItem WHERE cartId = ?";
 
     private static final String UPDATE_QUERY =
-            "UPDATE cartitem SET quantity = ? WHERE cartItemId = ?";
+            "UPDATE CartItem SET quantity = ? WHERE cartItemId = ?";
 
     private static final String DELETE_QUERY =
-            "DELETE FROM cartitem WHERE cartItemId = ?";
+            "DELETE FROM CartItem WHERE cartItemId = ?";
 
     private static final String CLEAR_QUERY =
-            "DELETE FROM cartitem WHERE cartId = ?";
+            "DELETE FROM CartItem WHERE cartId = ?";
 
 
     @Override
@@ -176,7 +176,7 @@ public class CartItemDAOImpl implements CartItemDAO {
         CartItem cartItem = null;
 
         String query =
-            "SELECT * FROM cartitem WHERE cartId = ? AND menuId = ?";
+            "SELECT * FROM CartItem WHERE cartId = ? AND menuId = ?";
 
         Connection connection = DBConnection.getConnection();
 
