@@ -60,13 +60,18 @@ body {
 }
 
 .logo {
-    font-size: 28px;
+    font-size: 34px;
     font-weight: 800;
-    color: #222;
+    color: #111111;
+    white-space: nowrap;
 }
 
-.logo b {
-    color: #d7352d;
+.logo-black {
+    color: #111111;
+}
+
+.logo-red {
+    color: #E53935;
 }
 
 .back-btn,
@@ -328,12 +333,11 @@ body {
 
     <div class="header-row">
 
-        <div class="logo">
-            Zestora<b>.</b>
-        </div>
-
+   <div class="logo">
+    <span class="logo-black">Zest</span><span class="logo-red">ora</span>
+</div>
         <button class="back-btn"
-                onclick="history.back()">
+                onclick="location.href='<%= contextPath %>/restaurant'">
             ← Back
         </button>
 

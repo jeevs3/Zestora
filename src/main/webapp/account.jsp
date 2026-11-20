@@ -92,29 +92,40 @@
             justify-content: space-between;
         }
 
-        .logo {
-            font-family: Georgia, serif;
-            font-size: 30px;
-            font-weight: 700;
-            color: #252525;
-        }
+       .logo {
+    font-size: 34px;
+    font-weight: 800;
+    color: #111111;
+    white-space: nowrap;
+}
 
-        .logo span {
-            color: #e93626;
-        }
+.logo-black {
+    color: #111111;
+}
 
-        .back-btn {
-            text-decoration: none;
-            color: #333;
-            font-weight: 600;
-            padding: 10px 16px;
-            border-radius: 10px;
-            transition: 0.2s;
-        }
+.logo-red {
+    color: #E53935;
+}
 
-        .back-btn:hover {
-            background: #f5eee8;
-        }
+      .back-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #111;
+    background: #f0f0f0;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 12px 20px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.back-btn:hover {
+    background: #e5e5e5;
+}
 
         /* PAGE */
 
@@ -338,8 +349,8 @@
     <div class="header-inner">
 
         <div class="logo">
-            Zestora<span>.</span>
-        </div>
+    <span class="logo-black">Zest</span><span class="logo-red">ora</span>
+</div>
 
         <a href="<%= contextPath %>/restaurant"
            class="back-btn">

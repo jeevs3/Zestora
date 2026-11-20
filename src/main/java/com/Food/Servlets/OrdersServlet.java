@@ -43,24 +43,24 @@ public class OrdersServlet extends HttpServlet {
         List<Map<String, Object>> orders = new ArrayList<>();
 
         String orderQuery =
-            "SELECT o.orderId, o.restaurantId, " +
-            "o.customerName, o.phone, o.deliveryAddress, " +
-            "o.pincode, o.instruction, o.itemTotal, " +
-            "o.deliveryFee, o.discount, o.totalAmount, " +
-            "o.paymentMethod, o.paymentStatus, o.orderStatus, " +
-            "o.createdAt, r.name AS restaurantName " +
-            "FROM Orders o " +
-            "LEFT JOIN Restaurant r " +
-            "ON o.restaurantId = r.restaurantId " +
-            "WHERE o.userId = ? " +
-            "ORDER BY o.createdAt DESC";
+        	    "SELECT o.orderId, o.restaurantId, " +
+        	    "o.customerName, o.phone, o.deliveryAddress, " +
+        	    "o.pincode, o.instruction, o.itemTotal, " +
+        	    "o.deliveryFee, o.discount, o.totalAmount, " +
+        	    "o.paymentMethod, o.paymentStatus, o.orderStatus, " +
+        	    "o.createdAt, r.name AS restaurantName " +
+        	    "FROM orders o " +
+        	    "LEFT JOIN restaurant r " +
+        	    "ON o.restaurantId = r.restaurantId " +
+        	    "WHERE o.userId = ? " +
+        	    "ORDER BY o.createdAt DESC";
 
         String itemQuery =
-            "SELECT oi.orderItemId, oi.menuId, oi.quantity, oi.price, " +
-            "m.itemName, m.photo " +
-            "FROM OrderItem oi " +
-            "LEFT JOIN Menu m ON oi.menuId = m.menuId " +
-            "WHERE oi.orderId = ?";
+        	    "SELECT oi.orderItemId, oi.menuId, oi.quantity, oi.price, " +
+        	    "m.itemName, m.photo " +
+        	    "FROM orderitem oi " +
+        	    "LEFT JOIN menu m ON oi.menuId = m.menuId " +
+        	    "WHERE oi.orderId = ?";
 
         try (Connection connection = DBConnection.getConnection();
              PreparedStatement orderStatement =

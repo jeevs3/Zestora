@@ -47,14 +47,20 @@
             padding: 0 8%;
         }
 
-        .logo {
-            font-size: 30px;
-            font-weight: 800;
-        }
+      .logo {
+    font-size: 34px;
+    font-weight: 800;
+    color: #111111;
+    white-space: nowrap;
+}
 
-        .logo span {
-            color: #e53935;
-        }
+.logo-black {
+    color: #111111;
+}
+
+.logo-red {
+    color: #E53935;
+}
 
         .back-btn {
             border: none;
@@ -291,8 +297,8 @@
 <header>
 
     <div class="logo">
-        Zestora<span>.</span>
-    </div>
+    <span class="logo-black">Zest</span><span class="logo-red">ora</span>
+</div>
 
     <button class="back-btn"
             onclick="history.back()">

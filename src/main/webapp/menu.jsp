@@ -136,9 +136,10 @@ button {
 }
 
 .logo {
-    font-family: Georgia, serif;
-    font-size: 30px;
+    font-size: 34px;
     font-weight: 800;
+    color: #111111;
+    white-space: nowrap;
 }
 
 .logo-black {

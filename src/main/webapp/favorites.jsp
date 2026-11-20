@@ -54,14 +54,20 @@
             border-bottom: 1px solid #eee;
         }
 
-        .logo {
-            font-size: 30px;
-            font-weight: 800;
-        }
+     .logo {
+    font-size: 34px;
+    font-weight: 800;
+    color: #111111;
+    white-space: nowrap;
+}
 
-        .logo span {
-            color: #e53935;
-        }
+.logo-black {
+    color: #111111;
+}
+
+.logo-red {
+    color: #E53935;
+}
 
         .header-buttons {
             display: flex;
@@ -256,9 +262,9 @@
 
 <header>
 
-    <div class="logo">
-        Zestora<span>.</span>
-    </div>
+   <div class="logo">
+    <span class="logo-black">Zest</span><span class="logo-red">ora</span>
+</div>
 
     <div class="header-buttons">
 

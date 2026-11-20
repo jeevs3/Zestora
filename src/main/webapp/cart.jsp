@@ -98,7 +98,10 @@ header {
 }
 
 .logo {
-    font: 700 32px Georgia, serif;
+    font-size: 34px;
+    font-weight: 800;
+    color: #111111;
+    white-space: nowrap;
 }
 
 .logo-black {

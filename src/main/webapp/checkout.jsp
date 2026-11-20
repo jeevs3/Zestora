@@ -101,20 +101,25 @@
 .logo-red {
     color: #E53935;
 }
-        .back-btn {
-            border: 1px solid #ddd;
-            background: #fff;
-            border-radius: 11px;
-            padding: 10px 18px;
-            font-weight: 600;
-            cursor: pointer;
-            text-decoration: none;
-            color: #222;
-        }
+       .back-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #111;
+    background: #f0f0f0;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 12px 20px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
 
-        .back-btn:hover {
-            background: #f7f7f7;
-        }
+.back-btn:hover {
+    background: #e5e5e5;
+}
 
         /* =========================
            PAGE
